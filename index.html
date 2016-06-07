@@ -16,6 +16,7 @@
         function preload () {
 
             game.load.image('Ball', 'assets/ball.png');
+            game.load.spritesheet('star', 'assets/starsheet.png', 26, 24, 8);
 
         }
 
@@ -29,6 +30,10 @@
 		    ball.body.collideWorldBounds = true;
 		    ball.body.bounce.set(1);
 		    ball.body.gravity.set(0, 900);
+
+		    var star = game.add.sprite(300, 200, 'star');
+		    star.animations.add('rotate');
+		    star.animations.play('rotate', 10, true);
 		}
 
 		function update() {
